@@ -17,7 +17,7 @@
 
 /* Normalize
    ========================================================================== */
-@import url(normalize.css);
+@import "_normalize";
 
 /* Utilitaires
    ========================================================================== */
@@ -41,8 +41,38 @@
 $couleurPrimaire: red;
 $testDeVariable: 100px;
 
+@mixin danserAvecMonChien {
+  border-bottom: red solid 2px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 body {
-  color: $couleurPrimaire;
+  color: black;
   //   fonctionne bien, en commentaire car pas beau
   //   font-size: $testDeVariable;
+}
+
+nav {
+  width: 80%;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    color: blue;
+    a {
+      font-weight: bold;
+    }
+    &:hover {
+      //   color: darken ($couleurPrimaire, 100%);
+      color: green;
+    }
+  }
+}
+
+main {
+  width: 80%;
+  p {
+    @include danserAvecMonChien;
+  }
 }
