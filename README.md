@@ -1,23 +1,24 @@
 # Cadriciel - sass
 
 ## @todo
+
 ### 1. Personnaliser le menu en améliorant son accessibilité
 
 > Cynthia : « À partir du menu dans le Guide de développement, voici le HTML qui pourrait être ajouté lorsque JavaScript est actif. La valeur de l'attribut aria-expanded serait à modifier (par Javascript) selon s'il est ouvert ou fermé. »
 
 Analyse:
+
 - ne pas remplacer le html par celui-ci dessous!! seulement ajouter sur la balise nav l'attribut  
   `aria-label="Menu principal"`
 - lorsqu'on crée le bouton ligne 24 : `this.refButton = document.createElement('button');`
 - il y a 3 attributs supplémentaires à ajouter au bouton menu:
-  - aria-expanded="false" 
-  - aria-haspopup="menu" 
+  - aria-expanded="false"
+  - aria-haspopup="menu"
   - aria-controls="navList"
 - pour faire ces ajouts [utiliser `setAttribute(name,value)`](https://developer.mozilla.org/fr/docs/Web/API/Element/setAttribute) .
-- repérer où dans le script vous devez faire basculer la valeur booléenne de `aria-expanded` 
+- repérer où dans le script vous devez faire basculer la valeur booléenne de `aria-expanded`
 
-
-```
+````
 <nav class="nav" aria-label="Menu principal">
 
     <button class="nav__control" aria-expanded="false" aria-haspopup="menu" aria-controls="navList">
@@ -65,3 +66,4 @@ Analyse:
     </ul>
 
 </nav> ```
+````

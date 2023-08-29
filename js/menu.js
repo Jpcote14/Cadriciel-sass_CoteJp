@@ -20,8 +20,16 @@ let menu = {
   configurerNav: function () {
     //********** Création du bouton du menu mobile
 
+    //On ajoute un aria label au nav
+    refNav = document.querySelector("nav");
+    this.refNav.setAttribute("aria-label", "Menu principal");
+
     // On crée VIRTUELLEMENT un bouton et un span (pour le texte du bouton)
     this.refButton = document.createElement("button");
+
+    this.refButton.setAttribute("aria-expanded", false);
+    this.refButton.setAttribute("aria-haspopup", "menu");
+    this.refButton.setAttribute("aria-controls", "navList");
     this.refSpan = document.createElement("span");
 
     // On ajoute le span dans le bouton
